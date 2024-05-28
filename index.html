@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="figure-selector">
+            <label for="shapes">Оберіть фігуру:</label>
+            <select id="shapes">
+                <option value="line">Лінія</option>
+                <option value="rectangle">Прямокутник</option>
+                <option value="circle">Коло</option>
+                <option value="pencil">Олівець</option>
+            </select>
+        </div>
+        <div class="figures"> 
+            <div class="figure" data-shape="line"></div> 
+            <div class="figure" data-shape="rectangle"></div> 
+            <div class="figure" data-shape="circle"></div>
+            <div id="selectedShapeName"></div> <!-- Додано сюди -->
+        </div>
+        <div class="color-selector">
+            <label for="color">Оберіть колір:</label>
+            <input type="color" id="color" value="#000000">
+            <canvas width="50" height="50" id="shapePreviewCanvas"></canvas>
+        </div>
+        <div class="figures">
+            <div class="figure" data-shape="line">
+                <canvas width="30" height="30" id="lineCanvas"></canvas>
+            </div>
+            <div class="figure" data-shape="rectangle">
+                <canvas width="30" height="30" id="rectCanvas"></canvas>
+            </div>
+            <div class="figure" data-shape="circle">
+                <canvas width="30" height="30" id="circleCanvas"></canvas>
+            </div>
+            <div class="figure" data-shape="pencil">
+                <canvas width="30" height="30" id="pencilCanvas"></canvas>
+            </div>
+        </div>
+        <button onclick="clearCanvas()">Очистити</button>
+    </div>
+    <canvas id="paintCanvas" width="800" height="600"></canvas>
+    <script src="js/script.js"></script>
+</body>
+</html>
